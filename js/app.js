@@ -2,25 +2,51 @@
 
 var demoApp = angular.module('demoApp', ['ngRoute', 'demoControllers', 'demoServices']);
 
-demoApp.config(['$routeProvider', function($routeProvider) {
+demoApp.config(['$routeProvider',function($routeProvider) {
   $routeProvider.
-    when('/firstview', {
-    templateUrl: 'partials/firstview.html',
-    controller: 'FirstController'
+   when('/edittaskview', {
+    templateUrl: 'partials/edittaskview.html',
+    controller: 'EditTaskController'
   }).
-  when('/secondview', {
-    templateUrl: 'partials/secondview.html',
-    controller: 'SecondController'
+    when('/adduserview', {
+    templateUrl: 'partials/adduserview.html',
+    controller: 'AddUserController'
+  }).
+  when('/addtaskview', {
+    templateUrl: 'partials/addtaskview.html',
+    controller: 'AddTaskController'
+  }).
+  when('/taskview', {
+    templateUrl: 'partials/taskview.html',
+    controller: 'TaskViewController'
   }).
   when('/settings', {
     templateUrl: 'partials/settings.html',
     controller: 'SettingsController'
   }).
-  when('/llamalist', {
-    templateUrl: 'partials/llamalist.html',
-    controller: 'LlamaListController'
+  when('/userview', {
+    templateUrl: 'partials/userview.html',
+    controller: 'UserViewController'
+  }).
+  when('/detailuserview/:_id',{
+   templateUrl: 'partials/detailuserview.html',
+    controller: 'DetailUserController'
+  }).
+  when('/detailtaskview/:_id',{
+   templateUrl: 'partials/detailtaskview.html',
+    controller: 'DetailTaskController'
   }).
   otherwise({
     redirectTo: '/settings'
   });
+
+
+   
 }]);
+
+
+
+var app= angular.module('app', [
+      '720kb.datepicker'
+      ]);
+

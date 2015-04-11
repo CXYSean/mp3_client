@@ -4,3 +4,18 @@
 @import "variables";
 @import "mixins";
 @import "base";
+
+h1 {
+  color: $orange;
+  font-size: 2.2rem;
+  text-align: center;
+  background-color: $header-footer-color;
+
+}
+
+.test {
+  font-size: 1.2rem;
+  color: $blue;
+}
+
+
