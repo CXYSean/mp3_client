@@ -63,7 +63,15 @@ demoControllers.controller('TaskViewController', ['$scope' , 'CommonTasks','$htt
       });
    };
 
+$scope.DeleteTask=function(task_id){
 
+   CommonTasks.deleteTask(task_id).success(function(data,status,headers){
+     CommonTasks.getTask().success(function(AllTasks){
+      $scope.tasks = AllTasks.data;
+     });
+   }).error(function(data, status, headers, config){});
+  
+  };
 }]);
 
 

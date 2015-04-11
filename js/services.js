@@ -66,6 +66,13 @@ angular.module('demoServices', [])
 		});
 		return theonetask;		
 	    },
+	    deleteTask: function(task_id){
+		var thedelete=$http({
+			url: baseUrl+'/api/tasks/'+task_id,
+			method: "DELETE"
+		});
+		return thedelete;
+            },
 	    setTask : function(newTask){
 		var thepost= $http({
   			url: baseUrl+'/api/tasks',
